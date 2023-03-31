@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewMaui.Pages.Parts.ModifyPart"
+             Title="ModifyPart">
+    <StackLayout>
+        <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"                
+                StrokeThickness="30"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 10 10 10 10">
+            <Label WidthRequest="350"
+                   HeightRequest="150"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Background="White"
+                   TextColor="#60893C"
+                   Text="ServiceHelper"
+                   FontSize="38"
+                   FontAttributes="Bold"
+                   />
+        </Border>
+        <Label Text="Modify Part" FontSize="Large" HorizontalOptions="CenterAndExpand" Margin="0,10,0,30"/>
+        <Label Text="Part ID" FontSize="Medium"/>
+        <Entry x:Name="partIDEntry" Placeholder="ID" Keyboard="Numeric"/>
+        <Label Text="Part Name" FontSize="Medium"/>
+        <Entry x:Name="partNameEntry"/>
+        <Label Text="Number In Stock" FontSize="Medium"/>
+        <Entry x:Name="numberInStockEntry" Keyboard="Numeric"/>
+        <Label Text="Part Price" FontSize="Medium"/>
+        <Entry x:Name="partPriceEntry" Keyboard="Numeric"/>
+        <Border WidthRequest="150"
+                HeightRequest="75"
+                Stroke="Red"
+                StrokeThickness="8"
+                BackgroundColor="PaleVioletRed"
+                StrokeShape="RoundRectangle 10 40 100 0">
+            <Label Text="Gem"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="28"
+                        FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLabelClickedModify"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Border>
+    </StackLayout>
+</ContentPage>

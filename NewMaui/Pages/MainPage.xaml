@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="NewMaui.MainPage"
+                BackgroundColor="{DynamicResource SecondaryColor}"
+                Title="Main Page">
+    <StackLayout
+            VerticalOptions="Start"
+            HorizontalOptions="CenterAndExpand">
+        <Border WidthRequest="300"
+                HeightRequest="200"
+                Stroke="White"
+                StrokeThickness="8"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 0 0 0 0">
+            <Image
+                    Source="https://www.environmental-expert.com/files/48365/images/48365_0_202007262041289965901.png"
+                    HeightRequest="200"
+                    WidthRequest="300"/>
+
+        </Border>
+        <Border WidthRequest="350"
+                HeightRequest="200"
+                Stroke="#60893C"
+                StrokeThickness="20"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 10 10 10 10">
+            <Label WidthRequest="300"
+                   HeightRequest="200"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Background="White"
+                   TextColor="#60893C"
+                   Text="ServiceHelper"
+                   FontSize="38"
+                   FontAttributes="Bold"
+                   />
+        </Border>
+        <Button
+                    Text="Start"
+                    FontSize="28"
+                    BackgroundColor="Blue"
+                    Clicked="OnButton_Clicked" />
+    </StackLayout>
+</ContentPage>

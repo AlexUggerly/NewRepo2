@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        x:Class="NewMaui.Menu"
+                        Title="Menu"
+                        BackgroundColor="White">
+    <ScrollView>
+        <StackLayout>
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"                
+                StrokeThickness="30"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 10 10 10 10">
+                <Label WidthRequest="350"
+                   HeightRequest="150"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Background="White"
+                   TextColor="#60893C"
+                   Text="ServiceHelper"
+                   FontSize="38"
+                   FontAttributes="Bold"
+                   />
+            </Border>
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"
+                StrokeThickness="8"
+                BackgroundColor="white"
+                StrokeShape="RoundRectangle 10 40 100 10">
+                <Label Text="Service"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="38"
+                        FontAttributes="Bold"
+                        TextColor="#60893C">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLabelClickedService"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Border>
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"
+                StrokeThickness="8"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 40 10 10 100">
+                <Label Text="Reservedele"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="38"
+                        FontAttributes="Bold"
+                        TextColor="#60893C">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLabelClickedReservedele"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Border>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

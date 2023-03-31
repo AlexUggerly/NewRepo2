@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewMaui.Service"
+             Title="Service">
+    <ScrollView>
+        <StackLayout>
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"
+                StrokeThickness="20"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 10 10 10 10">
+                <Label WidthRequest="350"
+                   HeightRequest="150"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Background="White"
+                   TextColor="#60893C"
+                   Text="ServiceHelper"
+                   FontSize="38"
+                   FontAttributes="Bold"
+                   />
+            </Border>
+            <Border WidthRequest="300"
+                HeightRequest="200"
+                Stroke="Blue"
+                StrokeThickness="8"
+                BackgroundColor="LightBlue"
+                StrokeShape="RoundRectangle 10 40 100 0">
+                <Label Text="Machine Parts"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="38"
+                    FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLabelClickedAllServices"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </Border>
+            <Border WidthRequest="300"
+                HeightRequest="200"
+                Stroke="Red"
+                StrokeThickness="8"
+                BackgroundColor="LightBlue"
+                StrokeShape="RoundRectangle 10 40 100 0">
+                <Label Text="All Parts"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="38"
+                    FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLabelClickedAllParts"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                      
+            </Border>
+            
+            <Border WidthRequest="300"
+                HeightRequest="200"
+                Stroke="Green"
+                StrokeThickness="8"
+                BackgroundColor="LightBlue"
+                StrokeShape="RoundRectangle 10 40 100 0">
+                <Label Text="Test"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="38"
+                    FontAttributes="Bold"/>
+
+            </Border>
+            <Border WidthRequest="300"
+                HeightRequest="200"
+                Stroke="Yellow"
+                StrokeThickness="8"
+                BackgroundColor="LightBlue"
+                StrokeShape="RoundRectangle 10 40 100 0">
+                <Label Text="Test"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="38"
+                    FontAttributes="Bold"/>
+
+            </Border>
+        </StackLayout>
+
+    </ScrollView>
+</ContentPage>

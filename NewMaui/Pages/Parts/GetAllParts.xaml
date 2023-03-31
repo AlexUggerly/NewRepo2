@@ -1,0 +1,63 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewMaui.Pages.GetAllParts"
+             Title="Se lager">
+    <ScrollView>
+        <StackLayout>
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"
+                StrokeThickness="30"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 10 10 10 10">
+                <Label WidthRequest="350"
+                   HeightRequest="150"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Background="White"
+                   TextColor="#60893C"
+                   Text="ServiceHelper"
+                   FontSize="38"
+                   FontAttributes="Bold"
+                   />
+            </Border>
+            <Grid ColumnSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="ID" FontAttributes="Bold" FontSize="30"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Navn" FontAttributes="Bold" FontSize="30"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Antal" FontAttributes="Bold" FontSize="30"/>
+                <Label Grid.Row="0" Grid.Column="3" Text="Pris" FontAttributes="Bold" FontSize="30"/>
+                <CollectionView Grid.Row="1" Grid.ColumnSpan="4" ItemsSource="{Binding parts, UpdateSourceEventName=PropertyChanged}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="75"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding partID}" FontSize="25"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding partName}" FontSize="25"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding numberInStock}" FontSize="25"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding partPrice}" FontSize="25"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
