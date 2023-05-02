@@ -8,23 +8,6 @@
             <Border WidthRequest="400"
                 HeightRequest="150"
                 Stroke="#60893C"
-                StrokeThickness="30"
-                BackgroundColor="White"
-                StrokeShape="RoundRectangle 10 10 10 10">
-                <Label WidthRequest="350"
-                   HeightRequest="150"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Background="White"
-                   TextColor="#60893C"
-                   Text="ServiceHelper"
-                   FontSize="38"
-                   FontAttributes="Bold"
-                   />
-            </Border>
-            <Border WidthRequest="400"
-                HeightRequest="150"
-                Stroke="#60893C"
                 StrokeThickness="8"
                 BackgroundColor="White"
                 StrokeShape="RoundRectangle 10 40 100 0">

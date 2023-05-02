@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewMaui.Pages.Service.ServiceDetails"
+             Title="Service Details">
+    <StackLayout>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Kunde: " FontSize="25"/>
+                    <Span Text="{Binding CustomerName}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Maskine: " FontSize="25"/>
+                    <Span Text="{Binding MachineName}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Serienummer: " FontSize="25"/>
+                    <Span Text="{Binding MachineSerialNumber}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Transport tid: " FontSize="25"/>
+                    <Span Text="{Binding TransportTimeUsed}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Transport km: " FontSize="25"/>
+                    <Span Text="{Binding TransportKmUsed}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Brugt arbejdstid: " FontSize="25"/>
+                    <Span Text="{Binding WorkTimeUsed}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Billede destination: " FontSize="25"/>
+                    <Span Text="{Binding ImagePath}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Note: " FontSize="25"/>
+                    <Span Text="{Binding Note}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Maskine status: " FontSize="25"/>
+                    <Span Text="{Binding MachineStatus}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="ServiceID: " FontSize="25"/>
+                    <Span Text="{Binding ServiceID}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Service dato: " FontSize="25"/>
+                    <Span Text="{Binding ShortServiceDate}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <CollectionView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Parts, UpdateSourceEventName=PropertyChanged}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding partID}" FontSize="25"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding partName}" FontSize="25" HorizontalTextAlignment="Start" />
+                        <BoxView Grid.Row="1" Grid.ColumnSpan="2" Color="Black" HeightRequest="1" VerticalOptions="End"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

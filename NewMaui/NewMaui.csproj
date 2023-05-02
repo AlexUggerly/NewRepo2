@@ -62,17 +62,17 @@
 	  <Compile Update="Pages\Parts\Parts.xaml.cs">
 	    <DependentUpon>Parts.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\Service\GetAllService.xaml.cs">
+	    <DependentUpon>GetAllService.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\Service\Service.xaml.cs">
 	    <DependentUpon>Service.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Pages\Menu.xaml.cs">
+	  <Compile Update="Pages\Main\Menu.xaml.cs">
 	    <DependentUpon>Menu.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\Parts\GetAllParts.xaml.cs">
 	    <DependentUpon>GetAllParts.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Pages\GetMachineParts.xaml.cs">
-	    <DependentUpon>GetMachineParts.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
@@ -89,19 +89,22 @@
 	  <MauiXaml Update="Pages\Parts\UpdateParts.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\Service\GetAllService.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\Service\Service.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Parts\Parts.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Menu.xaml">
+	  <MauiXaml Update="Pages\Main\Menu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Parts\GetAllParts.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\GetMachineParts.xaml">
+	  <MauiXaml Update="Pages\Service\ServiceDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -8,60 +8,45 @@
             <Border WidthRequest="400"
                 HeightRequest="150"
                 Stroke="#60893C"
-                StrokeThickness="20"
-                BackgroundColor="White"
-                StrokeShape="RoundRectangle 10 10 10 10">
-                <Label WidthRequest="350"
-                   HeightRequest="150"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   Background="White"
-                   TextColor="#60893C"
-                   Text="ServiceHelper"
-                   FontSize="38"
-                   FontAttributes="Bold"
-                   />
-            </Border>
-            <Border WidthRequest="300"
-                HeightRequest="200"
-                Stroke="Blue"
                 StrokeThickness="8"
-                BackgroundColor="LightBlue"
+                BackgroundColor="White"
                 StrokeShape="RoundRectangle 10 40 100 0">
-                <Label Text="Machine Parts"
+                <Label Text="Serviceliste"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand"
                        FontSize="38"
-                    FontAttributes="Bold">
+                    FontAttributes="Bold"
+                       TextColor="#60893C">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLabelClickedAllServices"/>
                     </Label.GestureRecognizers>
                 </Label>
 
             </Border>
-            <Border WidthRequest="300"
-                HeightRequest="200"
-                Stroke="Red"
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"
                 StrokeThickness="8"
-                BackgroundColor="LightBlue"
+                BackgroundColor="White"
                 StrokeShape="RoundRectangle 10 40 100 0">
-                <Label Text="All Parts"
+                <Label Text="Opret Service"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand"
                        FontSize="38"
-                    FontAttributes="Bold">
+                    FontAttributes="Bold"
+                       TextColor="#60893C">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLabelClickedAllParts"/>
+                        <TapGestureRecognizer Tapped="OnLabelClickedPostService"/>
                     </Label.GestureRecognizers>
                 </Label>
                       
             </Border>
-            
-            <Border WidthRequest="300"
-                HeightRequest="200"
-                Stroke="Green"
+
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"
                 StrokeThickness="8"
-                BackgroundColor="LightBlue"
+                BackgroundColor="White"
                 StrokeShape="RoundRectangle 10 40 100 0">
                 <Label Text="Test"
                         VerticalOptions="CenterAndExpand" 
@@ -70,11 +55,11 @@
                     FontAttributes="Bold"/>
 
             </Border>
-            <Border WidthRequest="300"
-                HeightRequest="200"
-                Stroke="Yellow"
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"
                 StrokeThickness="8"
-                BackgroundColor="LightBlue"
+                BackgroundColor="White"
                 StrokeShape="RoundRectangle 10 40 100 0">
                 <Label Text="Test"
                         VerticalOptions="CenterAndExpand" 

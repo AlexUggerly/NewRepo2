@@ -3,7 +3,6 @@
 namespace NewMaui.Model
 {
 
-    //git test
     public class tblParts : INotifyPropertyChanged
     {
         private int _partID;
@@ -62,9 +61,7 @@ namespace NewMaui.Model
                 }
             }
         }
-
         public event PropertyChangedEventHandler PropertyChanged;
-
         private void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
