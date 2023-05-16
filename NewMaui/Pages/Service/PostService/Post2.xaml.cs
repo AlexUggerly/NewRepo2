@@ -1,38 +1,77 @@
-namespace NewMaui.Pages.Service.PostService;
 using NewMaui.Data;
 using NewMaui.Model;
-using System.ComponentModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 
-public partial class Post2 : ContentPage, INotifyPropertyChanged
+namespace NewMaui.Pages.Service.PostService
 {
-    private List<Part> _parts;
-    public List<Part> Parts
+    public partial class Post2 : ContentPage
     {
-        get { return _parts; }
-        set
+        private ObservableCollection<Part> selectedParts = new ObservableCollection<Part>();
+        private PartsData partsData = new PartsData();
+
+        public ObservableCollection<Part> SelectedParts
         {
-            _parts = value;
-            OnPropertyChanged(nameof(Parts));
+            get { return selectedParts; }
+            set
+            {
+                selectedParts = value;
+                OnPropertyChanged(nameof(SelectedParts));
+            }
         }
-    }
-    public Post2()
-	{
-		InitializeComponent();
-        PartsData partsData = new PartsData();
-        BindingContext = this;    
-        LoadServicePartsAsync();
-	}
-    public async Task LoadServicePartsAsync()
-    {
-        PartsData partsData = new PartsData();
-        Parts = await partsData.GetPartsAsync();
-    }
-    private async void OnButton_Clicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new Post2());
+        public Post2()
+        {
+            InitializeComponent();
+            LoadServicePartsAsync();
+        }
+
+        public async Task LoadServicePartsAsync()
+        {
+            var parts = await partsData.GetPartsAsync();
+            foreach (var part in parts)
+            {
+                var picker = new Picker
+                {
+                    ItemsSource = parts,
+                    ItemDisplayBinding = new Binding("PartName"),
+                    Title = "Reservedel:",
+                    FontSize = 30,
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    FontAttributes = FontAttributes.Bold,
+                    HeightRequest = 80
+                };
+                picker.SelectedIndexChanged += OnPickerSelectedIndexChanged;
+                PickerStackLayout.Children.Add(picker);
+            }
+        }
+
+        private void OnPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            var selectedPart = (Part)picker.SelectedItem;
+            if (selectedPart != null)
+            {
+                SelectedParts.Add(selectedPart);
+            }
+        }
+        private void OnClearSelectionClicked(object sender, EventArgs e)
+        {
+            foreach (var picker in PickerStackLayout.Children.OfType<Picker>())
+            {
+                picker.SelectedItem = null;
+            }
+        }
+        private async void OnAddPartClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Post2());
+        }
+
+        private async void OnButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Post1());
+        }
     }
 }

@@ -18,17 +18,6 @@
                         FontAttributes="Bold"
                        TextColor="#60893C"/>
             </Border>
-            <Label Text="Del brugt:" FontSize="35" />
-            <Border Stroke="#60893C"
-                    StrokeThickness="10"
-                    StrokeShape="RoundRectangle 10 40 100 0">
-                <Picker ItemsSource="{Binding Parts}" 
-                    SelectedItem="{Binding SelectedPart}"
-                    ItemDisplayBinding="{Binding PartName}"
-                    BackgroundColor="White"
-                    Title="Reservedel:" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
-                    HeightRequest="80"/>
-            </Border>
             <Label Text="Del brugt:"
                    FontSize="35" />
             <StackLayout x:Name="PickerStackLayout"
@@ -37,6 +26,11 @@
                     FontSize="28"
                     BackgroundColor="Blue"
                     Clicked="OnAddPartClicked"
+                    Margin="0,20,0,0"/>
+            <Button Text="Fjern vagte"
+                    FontSize="28"
+                    BackgroundColor="Red"
+                    Clicked="OnClearSelectionClicked"
                     Margin="0,20,0,0"/>
             <Button
                     Text="Videre"
