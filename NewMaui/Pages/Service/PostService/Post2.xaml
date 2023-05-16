@@ -29,6 +29,15 @@
                     Title="Reservedel:" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
                     HeightRequest="80"/>
             </Border>
+            <Label Text="Del brugt:"
+                   FontSize="35" />
+            <StackLayout x:Name="PickerStackLayout"
+                         Spacing="10" />
+            <Button Text="Tilføj del"
+                    FontSize="28"
+                    BackgroundColor="Blue"
+                    Clicked="OnAddPartClicked"
+                    Margin="0,20,0,0"/>
             <Button
                     Text="Videre"
                     FontSize="28"
