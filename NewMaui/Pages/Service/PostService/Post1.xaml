@@ -58,7 +58,6 @@
                     BackgroundColor="Blue"
                     Clicked="OnButton_Clicked"
                     Margin="0,20,0,0"/>
-            <Label Text="{Binding SelectedMachine.MachineSerialNumber}" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

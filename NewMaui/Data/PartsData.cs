@@ -13,7 +13,7 @@ namespace NewMaui.Data
 {
     public class PartsData
     {
-        public List<Part> AvailableParts { get; private set; }
+
         HttpClient _client;
         JsonSerializerOptions _serializerOptions;
         public PartsData()
@@ -37,22 +37,6 @@ namespace NewMaui.Data
                 Console.WriteLine($"Error: {e.Message}");
             }
             return parts;
-        }
-        public async Task<List<Part>> GetServicePartsAsync()
-        {
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    client.Timeout = TimeSpan.FromSeconds(10); // Set a timeout of 10 seconds
-                    AvailableParts = await client.GetFromJsonAsync<List<Part>>("https://www.shiggy.dk/api/parts");
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error: {e.Message}");
-            }
-            return AvailableParts;
         }
         public async Task AddPartAsync(Part part)
         {

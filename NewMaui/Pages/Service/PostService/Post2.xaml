@@ -18,44 +18,16 @@
                         FontAttributes="Bold"
                        TextColor="#60893C"/>
             </Border>
-            <Label Text="Reservedel:" FontSize="35" />
-            <ListView ItemsSource="{Binding AvailableParts}"
-                      SelectionMode="Multiple"
-                      SelectedItems="{Binding SelectedParts}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding PartName}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <Label Text="Del brugt:" FontSize="35" />
             <Border Stroke="#60893C"
                     StrokeThickness="10"
                     StrokeShape="RoundRectangle 10 40 100 0">
-
-                <Picker                    
+                <Picker ItemsSource="{Binding Parts}" 
+                    SelectedItem="{Binding SelectedPart}"
+                    ItemDisplayBinding="{Binding PartName}"
                     BackgroundColor="White"
-                    Title="Vælg del:" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
+                    Title="Reservedel:" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
                     HeightRequest="80"/>
-            </Border>
-            <Label Text="Dato:" FontSize="35" />
-            <Border Stroke="#60893C"
-                    StrokeThickness="5"
-                    StrokeShape="RoundRectangle 10 40 100 0">
-                <DatePicker 
-                        BackgroundColor="White"
-                        FontSize="30" HorizontalOptions="Center" FontAttributes="Bold"
-                        HeightRequest="80" 
-                        WidthRequest="175"/>
-                
-            </Border>
-            <Label Text="Maskine:" FontSize="35" />
-            <Border Stroke="#60893C"
-                    StrokeThickness="10"
-                    StrokeShape="RoundRectangle 10 40 100 0">
-                <Picker 
-                    BackgroundColor="White"
-                    Title="Vælg serienummer:" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
-                    HeightRequest="80" />
             </Border>
             <Button
                     Text="Videre"
