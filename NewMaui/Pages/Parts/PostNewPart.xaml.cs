@@ -10,11 +10,11 @@ public partial class PostNewPart : ContentPage
 	}
     private async void OnLabelClickedSave(object sender, EventArgs e)
     {
-        var newPart = new tblParts
+        var newPart = new Part
         {
-            partName = partNameEntry.Text,
-            numberInStock = int.Parse(numberInStockEntry.Text),
-            partPrice = (double) decimal.Parse(partPriceEntry.Text)
+            PartName = partNameEntry.Text,
+            NumberInStock = int.Parse(numberInStockEntry.Text),
+            PartPrice = (double) decimal.Parse(partPriceEntry.Text)
         };
 
         var partsData = new PartsData();

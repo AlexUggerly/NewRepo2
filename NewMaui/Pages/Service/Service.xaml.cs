@@ -1,7 +1,9 @@
 using NewMaui.Model;
 using NewMaui.Pages;
 using NewMaui.Pages.Service;
+using NewMaui.Pages.Service.PostService;
 using System.Collections;
+
 
 namespace NewMaui;
 
@@ -17,7 +19,7 @@ public partial class Service : ContentPage
     }
     private async void OnLabelClickedPostService(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new GetAllParts());
+        await Navigation.PushAsync(new Post1());
     }
 
 }

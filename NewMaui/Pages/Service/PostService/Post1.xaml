@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewMaui.Pages.Service.PostService.Post1"
+             Title="Post1">
+    <ScrollView>
+        <StackLayout>
+            <Border WidthRequest="250"
+                HeightRequest="100"
+                Stroke="#60893C"
+                StrokeThickness="8"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 10 40 100 0">
+                <Label Text="Trin 1"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="38"
+                        FontAttributes="Bold"
+                       TextColor="#60893C"/>
+            </Border>
+            <Label Text="Kunde:" FontSize="35" />
+            <Border Stroke="#60893C"
+                    StrokeThickness="10"
+                    StrokeShape="RoundRectangle 10 40 100 0">
+                <Picker ItemsSource="{Binding Customers}" 
+                    SelectedItem="{Binding SelectedCustomer}"
+                    ItemDisplayBinding="{Binding CustomerName}"
+                    BackgroundColor="White"
+                    Title="Vælg kunde:" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
+                    HeightRequest="80"/>
+            </Border>
+            <Label Text="Dato:" FontSize="35" />
+            <Border Stroke="#60893C"
+                    StrokeThickness="5"
+                    StrokeShape="RoundRectangle 10 40 100 0">
+                <DatePicker 
+                        BackgroundColor="White"
+                        FontSize="30" HorizontalOptions="Center" FontAttributes="Bold"
+                        HeightRequest="80" 
+                        WidthRequest="175"/>
+            </Border>
+            <Label Text="Maskine:" FontSize="35" />
+            <Border Stroke="#60893C"
+                    StrokeThickness="10"
+                    StrokeShape="RoundRectangle 10 40 100 0">
+                <Picker ItemsSource="{Binding Machines}"
+                        SelectedItem="{Binding SelectedMachine}"
+                        ItemDisplayBinding="{Binding MachineSerialNumber}"
+                        Title="Vælg serienummer:"
+                        FontSize="30"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold"
+                        HeightRequest="80"/>
+            </Border>
+            <Button
+                    Text="Videre"
+                    FontSize="28"
+                    BackgroundColor="Blue"
+                    Clicked="OnButton_Clicked"
+                    Margin="0,20,0,0"/>
+            <Label Text="{Binding SelectedMachine.MachineSerialNumber}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -19,11 +19,11 @@ public partial class ModifyPart : ContentPage
         double partPrice = (double)decimal.Parse(partPriceEntry.Text);
 
         // Create a new tblParts object with the updated information
-        tblParts updatedPart = new tblParts
+        Part updatedPart = new Part
         {
-            partName = partName,
-            numberInStock = numberInStock,
-            partPrice = partPrice
+            PartName = partName,
+            NumberInStock = numberInStock,
+            PartPrice = partPrice
         };
 
         // Call the ModifyPartAsync method on the PartsData instance to update the part

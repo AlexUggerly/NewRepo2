@@ -5,7 +5,7 @@ namespace NewMaui.Pages;
 
 public partial class GetAllParts : ContentPage
 {
-    public List<tblParts> parts { get; set; }
+    public List<Part> parts { get; set; }
     public GetAllParts()
 	{
 		InitializeComponent();		

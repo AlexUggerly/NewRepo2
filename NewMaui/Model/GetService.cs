@@ -10,7 +10,7 @@ namespace NewMaui.Model
         private string _customerName;
         private string _machineName;
         private string _machineSerialNumber;
-        private List<tblParts> _parts;
+        private List<Part> _parts;
         private List<Image> _images;
         private int _transportTimeUsed;
         private int _transportKmUsed;
@@ -89,7 +89,7 @@ namespace NewMaui.Model
             }
         }
 
-        public List<tblParts> Parts
+        public List<Part> Parts
         {
             get { return _parts; }
             set
@@ -176,6 +176,18 @@ namespace NewMaui.Model
                 {
                     _note = value;
                     OnPropertyChanged("Note");
+                }
+            }
+        }
+        public string MachineStatus
+        {
+            get { return _machineStatus; }
+            set
+            {
+                if (_machineStatus != value)
+                {
+                    _machineStatus = value;
+                    OnPropertyChanged("MachineStatus");
                 }
             }
         }

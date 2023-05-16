@@ -13,6 +13,7 @@ namespace NewMaui.Data
 {
     public class PartsData
     {
+        public List<Part> AvailableParts { get; private set; }
         HttpClient _client;
         JsonSerializerOptions _serializerOptions;
         public PartsData()
@@ -20,15 +21,15 @@ namespace NewMaui.Data
             _client = new HttpClient();
             _serializerOptions = new JsonSerializerOptions();
         }
-        public async Task<List<tblParts>> GetPartsAsync()
+        public async Task<List<Part>> GetPartsAsync()
         {
-            List<tblParts> parts = new();
+            List<Part> parts = new();
             try
             {
                 using (var client = new HttpClient())
                 {
                     client.Timeout = TimeSpan.FromSeconds(10); // Set a timeout of 10 seconds
-                    parts = await client.GetFromJsonAsync<List<tblParts>>("https://www.shiggy.dk/api/parts");
+                    parts = await client.GetFromJsonAsync<List<Part>>("https://www.shiggy.dk/api/parts");
                 }
             }
             catch (Exception e)
@@ -37,15 +38,31 @@ namespace NewMaui.Data
             }
             return parts;
         }
-        public async Task AddPartAsync(tblParts part)
+        public async Task<List<Part>> GetServicePartsAsync()
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.Timeout = TimeSpan.FromSeconds(10); // Set a timeout of 10 seconds
+                    AvailableParts = await client.GetFromJsonAsync<List<Part>>("https://www.shiggy.dk/api/parts");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
+            }
+            return AvailableParts;
+        }
+        public async Task AddPartAsync(Part part)
         {
             try
             {
                 var json = JsonSerializer.Serialize(new
                 {
-                    partName = part.partName,
-                    numberInStock = part.numberInStock,
-                    partPrice = part.partPrice
+                    partName = part.PartName,
+                    numberInStock = part.NumberInStock,
+                    partPrice = part.PartPrice
                 }, _serializerOptions);
 
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -68,15 +85,15 @@ namespace NewMaui.Data
                 Console.WriteLine($"Error: {e.Message}");
             }
         }
-        public async Task ModifyPartAsync(int id, tblParts updatedPart)
+        public async Task ModifyPartAsync(int id, Part updatedPart)
         {
             try
             {
                 var json = JsonSerializer.Serialize(new
                 {
-                    partName = updatedPart.partName,
-                    numberInStock = updatedPart.numberInStock,
-                    partPrice = updatedPart.partPrice
+                    partName = updatedPart.PartName,
+                    numberInStock = updatedPart.NumberInStock,
+                    partPrice = updatedPart.PartPrice
                 }, _serializerOptions);
 
                 var content = new StringContent(json, Encoding.UTF8, "application/json");

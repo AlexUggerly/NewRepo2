@@ -2,15 +2,15 @@
 
 namespace NewMaui.Model
 {
-
-    public class tblParts : INotifyPropertyChanged
+    public class Part : INotifyPropertyChanged
     {
         private int _partID;
         private string _partName;
         private int _numberInStock;
         private double _partPrice;
+        private int _amountPartMachine;
 
-        public int partID
+        public int PartID
         {
             get { return _partID; }
             set
@@ -18,12 +18,12 @@ namespace NewMaui.Model
                 if (_partID != value)
                 {
                     _partID = value;
-                    OnPropertyChanged("partID");
+                    OnPropertyChanged("PartID");
                 }
             }
         }
 
-        public string partName
+        public string PartName
         {
             get { return _partName; }
             set
@@ -31,12 +31,12 @@ namespace NewMaui.Model
                 if (_partName != value)
                 {
                     _partName = value;
-                    OnPropertyChanged("partName");
+                    OnPropertyChanged("PartName");
                 }
             }
         }
 
-        public int numberInStock
+        public int NumberInStock
         {
             get { return _numberInStock; }
             set
@@ -44,12 +44,12 @@ namespace NewMaui.Model
                 if (_numberInStock != value)
                 {
                     _numberInStock = value;
-                    OnPropertyChanged("numberInStock");
+                    OnPropertyChanged("NumberInStock");
                 }
             }
         }
 
-        public double partPrice
+        public double PartPrice
         {
             get { return _partPrice; }
             set
@@ -57,17 +57,29 @@ namespace NewMaui.Model
                 if (_partPrice != value)
                 {
                     _partPrice = value;
-                    OnPropertyChanged("partPrice");
+                    OnPropertyChanged("PartPrice");
                 }
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
+
+        public int AmountPartMachine
         {
-            if (PropertyChanged != null)
+            get { return _amountPartMachine; }
+            set
             {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                if (_amountPartMachine != value)
+                {
+                    _amountPartMachine = value;
+                    OnPropertyChanged("AmountPartMachine");
+                }
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
