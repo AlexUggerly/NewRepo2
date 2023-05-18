@@ -64,14 +64,22 @@ namespace NewMaui.Pages.Service.PostService
                 picker.SelectedItem = null;
             }
         }
-        private async void OnAddPartClicked(object sender, EventArgs e)
+        private void OnAddPartClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Post2());
+            foreach (var picker in PickerStackLayout.Children.OfType<Picker>())
+            {
+                var selectedPart = (Part)picker.SelectedItem;
+                if (selectedPart != null)
+                {
+                    SelectedParts.Add(selectedPart);
+                    picker.SelectedItem = null; // Reset the selected item
+                }
+            }
         }
 
         private async void OnButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Post1());
+            await Navigation.PushAsync(new Post3());
         }
     }
 }

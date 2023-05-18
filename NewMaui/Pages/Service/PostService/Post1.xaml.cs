@@ -63,6 +63,7 @@ public partial class Post1 : ContentPage, INotifyPropertyChanged
             }
         }
     }
+    
 
     public Post1()
     {
@@ -83,12 +84,16 @@ public partial class Post1 : ContentPage, INotifyPropertyChanged
 
     private async void OnButton_Clicked(object sender, EventArgs e)
     {
+        if (SelectedCustomer == null)
+        {
+            await DisplayAlert("Error", "Vælg en kunde", "OK");
+            return;
+        }
         if (SelectedMachine == null)
         {
             await DisplayAlert("Error", "Vælg en maskine", "OK");
             return;
         }
-
         await Navigation.PushAsync(new Post2());
     }
 }

@@ -22,23 +22,33 @@
             <Border Stroke="#60893C"
                     StrokeThickness="10"
                     StrokeShape="RoundRectangle 10 40 100 0">
-                <Picker ItemsSource="{Binding Customers}" 
+                <Picker 
+                    
+                    ItemsSource="{Binding Customers}" 
                     SelectedItem="{Binding SelectedCustomer}"
                     ItemDisplayBinding="{Binding CustomerName}"
                     BackgroundColor="White"
                     Title="Vælg kunde:" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
                     HeightRequest="80"/>
             </Border>
+            <Label FontSize="15">
+                <Label.Text>
+                    <Binding Path="SelectedCustomer.CustomerID" StringFormat="Customer Id: {0}" />
+                </Label.Text>
+            </Label>
+
             <Label Text="Dato:" FontSize="35" />
-            <Border Stroke="#60893C"
+            <!--<Border Stroke="#60893C"
                     StrokeThickness="5"
                     StrokeShape="RoundRectangle 10 40 100 0">
                 <DatePicker 
+                        x:Name="ServiceDatePicker"
+                        DateSelected="{Binding SelectedDate}"
                         BackgroundColor="White"
                         FontSize="30" HorizontalOptions="Center" FontAttributes="Bold"
                         HeightRequest="80" 
                         WidthRequest="175"/>
-            </Border>
+            </Border>-->
             <Label Text="Maskine:" FontSize="35" />
             <Border Stroke="#60893C"
                     StrokeThickness="10"
