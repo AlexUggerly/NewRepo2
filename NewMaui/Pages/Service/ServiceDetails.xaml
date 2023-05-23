@@ -92,19 +92,22 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <CollectionView Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Parts, UpdateSourceEventName=PropertyChanged}">
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding Parts, UpdateSourceEventName=PropertyChanged}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="50"/>
                             <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding partID}" FontSize="25"/>
-                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding partName}" FontSize="25" HorizontalTextAlignment="Start" />
+                        <Label Grid.Row="0" Grid.Column="0" Text="ID:  " FontSize="25"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Navn:  " FontSize="25"/>
+                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding PartID}" FontSize="25"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding PartName}" FontSize="25"/>
                         <BoxView Grid.Row="1" Grid.ColumnSpan="2" Color="Black" HeightRequest="1" VerticalOptions="End"/>
                     </Grid>
                 </DataTemplate>

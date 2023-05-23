@@ -21,5 +21,9 @@ public partial class Service : ContentPage
     {
         await Navigation.PushAsync(new Post1());
     }
-
+    private async void OnLabelClickedInvoice(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new GetInvoice());
+    }
+    
 }

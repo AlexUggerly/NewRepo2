@@ -39,21 +39,6 @@
                         <TapGestureRecognizer Tapped="OnLabelClickedPostService"/>
                     </Label.GestureRecognizers>
                 </Label>
-                      
-            </Border>
-
-            <Border WidthRequest="400"
-                HeightRequest="150"
-                Stroke="#60893C"
-                StrokeThickness="8"
-                BackgroundColor="White"
-                StrokeShape="RoundRectangle 10 40 100 0">
-                <Label Text="Test"
-                        VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand"
-                       FontSize="38"
-                    FontAttributes="Bold"/>
-
             </Border>
             <Border WidthRequest="400"
                 HeightRequest="150"
@@ -61,12 +46,15 @@
                 StrokeThickness="8"
                 BackgroundColor="White"
                 StrokeShape="RoundRectangle 10 40 100 0">
-                <Label Text="Test"
+                <Label Text="Hent faktura"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand"
                        FontSize="38"
-                    FontAttributes="Bold"/>
-
+                    FontAttributes="Bold">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLabelClickedInvoice"/>
+                    </Label.GestureRecognizers>
+                </Label>
             </Border>
         </StackLayout>
 

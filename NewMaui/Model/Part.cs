@@ -9,6 +9,7 @@ namespace NewMaui.Model
         private int _numberInStock;
         private double _partPrice;
         private int _amountPartMachine;
+        private int _partsUsed;
 
         public int PartID
         {
@@ -71,6 +72,18 @@ namespace NewMaui.Model
                 {
                     _amountPartMachine = value;
                     OnPropertyChanged("AmountPartMachine");
+                }
+            }
+        }
+        public int PartsUsed
+        {
+            get { return _partsUsed; }
+            set
+            {
+                if (_partsUsed != value)
+                {
+                    _partsUsed = value;
+                    OnPropertyChanged("PartsUsed");
                 }
             }
         }

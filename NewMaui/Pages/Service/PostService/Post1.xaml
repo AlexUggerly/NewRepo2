@@ -11,49 +11,29 @@
                 StrokeThickness="8"
                 BackgroundColor="White"
                 StrokeShape="RoundRectangle 10 40 100 0">
-                <Label Text="Trin 1"
+                <Label Text="Nyt Service"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand"
                         FontSize="38"
                         FontAttributes="Bold"
                        TextColor="#60893C"/>
             </Border>
-            <Label Text="Kunde:" FontSize="35" />
-            <Border Stroke="#60893C"
-                    StrokeThickness="10"
-                    StrokeShape="RoundRectangle 10 40 100 0">
-                <Picker 
-                    
+            <Label Text="Kunde:" FontSize="35" TextColor="#60893C" />
+            <Picker                    
                     ItemsSource="{Binding Customers}" 
                     SelectedItem="{Binding SelectedCustomer}"
                     ItemDisplayBinding="{Binding CustomerName}"
                     BackgroundColor="White"
                     Title="Vælg kunde:" FontSize="30" HorizontalTextAlignment="Center" FontAttributes="Bold"
                     HeightRequest="80"/>
-            </Border>
             <Label FontSize="15">
                 <Label.Text>
                     <Binding Path="SelectedCustomer.CustomerID" StringFormat="Customer Id: {0}" />
                 </Label.Text>
             </Label>
+            <Label Text="Maskine:" FontSize="35" TextColor="#60893C"/>
 
-            <Label Text="Dato:" FontSize="35" />
-            <!--<Border Stroke="#60893C"
-                    StrokeThickness="5"
-                    StrokeShape="RoundRectangle 10 40 100 0">
-                <DatePicker 
-                        x:Name="ServiceDatePicker"
-                        DateSelected="{Binding SelectedDate}"
-                        BackgroundColor="White"
-                        FontSize="30" HorizontalOptions="Center" FontAttributes="Bold"
-                        HeightRequest="80" 
-                        WidthRequest="175"/>
-            </Border>-->
-            <Label Text="Maskine:" FontSize="35" />
-            <Border Stroke="#60893C"
-                    StrokeThickness="10"
-                    StrokeShape="RoundRectangle 10 40 100 0">
-                <Picker ItemsSource="{Binding Machines}"
+            <Picker ItemsSource="{Binding Machines}"
                         SelectedItem="{Binding SelectedMachine}"
                         ItemDisplayBinding="{Binding MachineSerialNumber}"
                         Title="Vælg serienummer:"
@@ -61,9 +41,33 @@
                         HorizontalTextAlignment="Center"
                         FontAttributes="Bold"
                         HeightRequest="80"/>
-            </Border>
+            <Label Text="Del brugt:"
+                   FontSize="35" TextColor="#60893C" />
+            <StackLayout x:Name="PickerStackLayout"                      
+                         Spacing="10" />
+            <Button Text="Tilføj del(e)"
+                    FontSize="28"
+                    BackgroundColor="Blue"
+                    Clicked="OnAddPartClicked"
+                    Margin="0,20,0,0"/>
+            <Button Text="Fjern valgte"
+                    FontSize="28"
+                    BackgroundColor="Red"
+                    Clicked="OnClearSelectionClicked"
+                    Margin="0,20,0,0"/>
+
+            <Label Text="Antal kørte km:" FontSize="30" TextColor="#60893C"/>
+            <Entry x:Name="kmEntry"  FontSize="25"/>
+            <Label Text="Kørselstid (minutter):" FontSize="30" TextColor="#60893C"/>
+            <Entry x:Name="transportTimeEntry"  FontSize="25" />
+            <Label Text="Arbejdstid (minutter):" FontSize="30" TextColor="#60893C"/>
+            <Entry x:Name="workTimeEntry"  FontSize="25"/>
+            <Label Text="Status maskine:" FontSize="30" TextColor="#60893C"/>
+            <Entry x:Name="statusEntry"  FontSize="25"/>
+            <Label Text="Note (frivillig):" FontSize="30" TextColor="#60893C"/>
+            <Entry x:Name="noteEntry"  FontSize="25"/>
             <Button
-                    Text="Videre"
+                    Text="Gem Service"
                     FontSize="28"
                     BackgroundColor="Blue"
                     Clicked="OnButton_Clicked"

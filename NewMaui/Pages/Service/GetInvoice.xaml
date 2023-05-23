@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewMaui.Pages.Service.GetInvoice"
+             Title="Invoice">
+    <ScrollView>
+        <StackLayout>
+            <Border WidthRequest="400"
+                HeightRequest="150"
+                Stroke="#60893C"
+                StrokeThickness="8"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 10 40 100 0">
+                <Label Text="Faktura"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                       FontSize="38"
+                       FontAttributes="Bold"
+                       TextColor="#60893C">
+                </Label>
+            </Border>
+            <Label Text="Indtast ServiceID" FontSize="30" TextColor="#60893C" />
+            <Entry x:Name="serviceIDEntry" Placeholder="ID" Keyboard="Numeric"/>
+            <Button
+                    Text="Hent faktura"
+                    FontSize="28"
+                    BackgroundColor="Blue"
+                    Clicked="OnButtonClickedInvoice"
+                    Margin="0,20,0,0"/>
+            <Label Text="Dato: " FontSize="25" />
+            <Label Text="{Binding Invoice.serviceDate, StringFormat='{0:dd/MM/yyyy HH:mm:ss}'}" FontSize="25" />
+
+            <Label Text="Dele brugt: " FontSize="25" />
+            <Label BindingContext="Invoice" Text="{Binding totalPartsName}" FontSize="25" />
+
+            <Label Text="Arbejdstid: " FontSize="25" />
+            <Label Text="{Binding Invoice.workTimeUsed}" FontSize="25" />
+
+            <Label Text="Arbejdstid pris: " FontSize="25" />
+            <Label Text="{Binding Invoice.workPrice}" FontSize="25" />
+
+            <Label Text="Transporttid: " FontSize="25" />
+            <Label Text="{Binding Invoice.transportTimeUsed}" FontSize="25" />
+
+            <Label Text="Transporttid pris: " FontSize="25" />
+            <Label Text="{Binding Invoice.transportTimePrice}" FontSize="25" />
+
+            <Label Text="Transport km: " FontSize="25" />
+            <Label Text="{Binding Invoice.transportKmUsed}" FontSize="25" />
+
+            <Label Text="Transport km pris: " FontSize="25" />
+            <Label Text="{Binding Invoice.transportKmPrice}" FontSize="25" />
+
+            <Label Text="Total pris: " FontSize="25" />
+            <Label Text="{Binding Invoice.totalPrice}" FontSize="25" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
