@@ -32,10 +32,10 @@
                                     <ColumnDefinition Width="75"/>
                                     <ColumnDefinition Width="100"/>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding partID}" FontSize="25"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding partName}" FontSize="25"/>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding numberInStock}" FontSize="25"/>
-                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding partPrice}" FontSize="25"/>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding PartID}" FontSize="25"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding PartName}" FontSize="25"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding NumberInStock}" FontSize="25"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding PartPrice}" FontSize="25"/>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

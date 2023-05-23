@@ -25,5 +25,6 @@ public partial class Service : ContentPage
     {
         await Navigation.PushAsync(new GetInvoice());
     }
+
     
 }

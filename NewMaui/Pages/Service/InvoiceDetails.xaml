@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewMaui.Pages.Service.InvoiceDetails"
+             Title="InvoiceDetails">
+    <StackLayout>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Servicedato: " FontSize="25" />
+                    <Span Text="{Binding serviceDate}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Brugte Reservedele: " FontSize="25" />
+                    <Span Text="{Binding totalPartsName}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Arbejdstime Pris: " FontSize="25" />
+                    <Span Text="{Binding workPrice}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Arbejdstime Brugt: " FontSize="25" />
+                    <Span Text="{Binding workTimeUsed}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Transport Tid Pris: " FontSize="25" />
+                    <Span Text="{Binding transportTimePrice}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Transport Tid Brugt: " FontSize="25" />
+                    <Span Text="{Binding transportTimeUsed}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Transport Km Pris: " FontSize="25" />
+                    <Span Text="{Binding transportKmPrice}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Transport Km Brugt: " FontSize="25" />
+                    <Span Text="{Binding transportKmUsed}" FontSize="25" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Total Pris: " FontSize="25" />
+                    <Span Text="{Binding totalPrice}" FontSize="25" FontAttributes="Bold" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+</ContentPage>

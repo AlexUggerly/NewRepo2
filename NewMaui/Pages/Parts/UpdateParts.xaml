@@ -28,7 +28,7 @@
                 StrokeThickness="8"
                 BackgroundColor="white"
                 StrokeShape="RoundRectangle 10 40 100 0">
-                <Label Text="Ændr reservedel - virker ikke!"
+                <Label Text="Ændr reservedel"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand"
                         FontSize="38"

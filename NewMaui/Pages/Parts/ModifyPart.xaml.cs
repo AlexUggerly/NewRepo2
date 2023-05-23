@@ -13,26 +13,28 @@ public partial class ModifyPart : ContentPage
     private async void OnLabelClickedModify(object sender, EventArgs e)
     {
         // Get the updated part information from the form
-        int partID = int.Parse(partIDEntry.Text);
-        string partName = partNameEntry.Text;
-        int numberInStock = int.Parse(numberInStockEntry.Text);
-        double partPrice = (double)decimal.Parse(partPriceEntry.Text);
+        int PartID = int.Parse(partIDEntry.Text);
+        string PartName = partNameEntry.Text;
+        int NumberInStock = int.Parse(numberInStockEntry.Text);
+        double PartPrice = (double)decimal.Parse(partPriceEntry.Text);
 
-        // Create a new tblParts object with the updated information
+        // Create a new Part object with the updated information
         Part updatedPart = new Part
         {
-            PartName = partName,
-            NumberInStock = numberInStock,
-            PartPrice = partPrice
+            PartID = PartID,
+            PartName = PartName,
+            NumberInStock = NumberInStock,
+            PartPrice = PartPrice
         };
 
         // Call the ModifyPartAsync method on the PartsData instance to update the part
-        await _partsData.ModifyPartAsync(partID, updatedPart);
+        await _partsData.ModifyPartAsync(PartID, updatedPart);
 
         // Display a message to the user indicating the part has been updated
-        await DisplayAlert("Part Updated", $"Part with ID {partID} has been updated.", "OK");
+        await DisplayAlert("Part Updated", $"Part with ID {PartID} has been updated.", "OK");
 
         // Navigate back to the previous page
         await Navigation.PopAsync();
     }
+
 }

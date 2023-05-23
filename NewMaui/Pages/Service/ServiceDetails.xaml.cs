@@ -11,4 +11,5 @@ public partial class ServiceDetails : ContentPage
         BindingContext = service;
         
     }
+
 }

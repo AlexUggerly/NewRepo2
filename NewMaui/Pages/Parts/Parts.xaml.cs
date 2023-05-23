@@ -21,4 +21,5 @@ public partial class Parts : ContentPage
     {
         await Navigation.PushAsync(new PostNewPart());
     }
+
 }

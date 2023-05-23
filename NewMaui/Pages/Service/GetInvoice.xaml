@@ -3,56 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NewMaui.Pages.Service.GetInvoice"
              Title="Invoice">
-    <ScrollView>
-        <StackLayout>
-            <Border WidthRequest="400"
-                HeightRequest="150"
-                Stroke="#60893C"
-                StrokeThickness="8"
-                BackgroundColor="White"
-                StrokeShape="RoundRectangle 10 40 100 0">
-                <Label Text="Faktura"
-                        VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand"
-                       FontSize="38"
-                       FontAttributes="Bold"
-                       TextColor="#60893C">
-                </Label>
-            </Border>
-            <Label Text="Indtast ServiceID" FontSize="30" TextColor="#60893C" />
-            <Entry x:Name="serviceIDEntry" Placeholder="ID" Keyboard="Numeric"/>
-            <Button
-                    Text="Hent faktura"
-                    FontSize="28"
-                    BackgroundColor="Blue"
-                    Clicked="OnButtonClickedInvoice"
-                    Margin="0,20,0,0"/>
-            <Label Text="Dato: " FontSize="25" />
-            <Label Text="{Binding Invoice.serviceDate, StringFormat='{0:dd/MM/yyyy HH:mm:ss}'}" FontSize="25" />
-
-            <Label Text="Dele brugt: " FontSize="25" />
-            <Label BindingContext="Invoice" Text="{Binding totalPartsName}" FontSize="25" />
-
-            <Label Text="Arbejdstid: " FontSize="25" />
-            <Label Text="{Binding Invoice.workTimeUsed}" FontSize="25" />
-
-            <Label Text="Arbejdstid pris: " FontSize="25" />
-            <Label Text="{Binding Invoice.workPrice}" FontSize="25" />
-
-            <Label Text="Transporttid: " FontSize="25" />
-            <Label Text="{Binding Invoice.transportTimeUsed}" FontSize="25" />
-
-            <Label Text="Transporttid pris: " FontSize="25" />
-            <Label Text="{Binding Invoice.transportTimePrice}" FontSize="25" />
-
-            <Label Text="Transport km: " FontSize="25" />
-            <Label Text="{Binding Invoice.transportKmUsed}" FontSize="25" />
-
-            <Label Text="Transport km pris: " FontSize="25" />
-            <Label Text="{Binding Invoice.transportKmPrice}" FontSize="25" />
-
-            <Label Text="Total pris: " FontSize="25" />
-            <Label Text="{Binding Invoice.totalPrice}" FontSize="25" />
-        </StackLayout>
-    </ScrollView>
+    <StackLayout>
+        <ScrollView  VerticalScrollBarVisibility="Always">
+            <Grid ColumnSpacing="1" VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="175"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="ID" FontAttributes="Bold" FontSize="30" HorizontalTextAlignment="Start"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Kunde" FontAttributes="Bold" FontSize="30" HorizontalTextAlignment="Start"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Dato" FontAttributes="Bold" FontSize="30" HorizontalTextAlignment="Start"/>
+                <BoxView Grid.Row="0" Grid.ColumnSpan="3" Color="#60893C" HeightRequest="4" VerticalOptions="End"/>
+                <CollectionView Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="3" ItemsSource="{Binding services, UpdateSourceEventName=PropertyChanged}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="175"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding ServiceID}" FontSize="20"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding CustomerName}" FontSize="20" HorizontalTextAlignment="Start" />
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding ShortServiceDate}" FontSize="20" HorizontalTextAlignment="Start"/>
+                                <BoxView Grid.Row="1" Grid.ColumnSpan="3" Color="Black" HeightRequest="1" VerticalOptions="End"/>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnServiceClicked"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
 </ContentPage>

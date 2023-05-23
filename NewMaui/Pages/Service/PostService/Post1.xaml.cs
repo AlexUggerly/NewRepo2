@@ -239,5 +239,24 @@ public partial class Post1 : ContentPage, INotifyPropertyChanged
 
         return 0;
     }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        var homeToolbarItem = new ToolbarItem
+        {
+            Text = "Home",
+            IconImageSource = "home_icon.png",
+            Priority = 0,
+            Order = ToolbarItemOrder.Primary
+        };
+        homeToolbarItem.Clicked += GoToHomePage;
+
+        ToolbarItems.Add(homeToolbarItem);
+    }
+    private async void GoToHomePage(object sender, EventArgs e)
+    {
+        await Navigation.PopToRootAsync();
+    }
 
 }

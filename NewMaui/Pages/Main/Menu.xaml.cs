@@ -15,5 +15,6 @@ public partial class Menu : ContentPage
     {
         await Navigation.PushAsync(new Parts());
     }
+
     
 }

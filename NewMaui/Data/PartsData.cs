@@ -75,6 +75,7 @@ namespace NewMaui.Data
             {
                 var json = JsonSerializer.Serialize(new
                 {
+                    partId= updatedPart.PartID,
                     partName = updatedPart.PartName,
                     numberInStock = updatedPart.NumberInStock,
                     partPrice = updatedPart.PartPrice

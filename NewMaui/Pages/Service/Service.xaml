@@ -50,7 +50,8 @@
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand"
                        FontSize="38"
-                    FontAttributes="Bold">
+                    FontAttributes="Bold"
+                       TextColor="#60893C">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLabelClickedInvoice"/>
                     </Label.GestureRecognizers>
